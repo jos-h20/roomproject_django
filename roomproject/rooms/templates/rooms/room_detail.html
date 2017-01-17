@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{{ room.title }}
+{% endblock %}
+
+{% block jumbotron %}
+<div class="jumbotron">
+    <h1>{{ room.title }}</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+    <h4>Title: {{ room.title}}</h4>
+    <h4>Description: {{ room.description }}</h4>
+    <h4>Location: {{room.location }}</h4>
+    <img src="{{ room.img_url }}"/>
+{% endblock %}

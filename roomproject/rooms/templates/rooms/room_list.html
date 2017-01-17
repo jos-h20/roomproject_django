@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}List of Rooms{% endblock %}
+
+{% block jumbotron %}
+<div class="jumbotron">
+    <h1>Rooms</h1>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="room_list">
+  {% for room in rooms %}
+      <a href="{% url 'room' pk=room.pk %}">{{ room.title|linebreaks }}</a>
+  {% endfor %}
+</div>
+<form action="post_url" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
